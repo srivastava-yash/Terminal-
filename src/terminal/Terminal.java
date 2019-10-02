@@ -7,9 +7,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.io.*;
+//<<<<<<< master
+import java.util.*;
+//=======
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.Timer.*;
+//>>>>>>> master
 import static javafx.scene.paint.Color.color;
 import javax.swing.*;
 
@@ -51,9 +55,15 @@ public class Terminal  {
                String s = command.getText().toString();             //getting the command
 
                String[] str = s.split(" ");
+//<<<<<<< master
+               
+               if(str[0].compareTo("mkdir")==0)
+               {                
+//=======
 
                if(str[0].equals("mkdir"))
                {
+//>>>>>>> master
                    command.setText("");
                    file = new File("C:\\"+str[1]);
                    if (!file.exists()) {
