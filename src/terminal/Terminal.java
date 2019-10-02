@@ -7,8 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.io.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.*;
 import static javafx.scene.paint.Color.color;
 import javax.swing.*;
 
@@ -51,7 +50,7 @@ public class Terminal  {
                
                String[] str = s.split(" ");
                
-               if(str[0].equals("mkdir"))
+               if(str[0].compareTo("mkdir")==0)
                {                
                    command.setText("");
                    file = new File("C:\\"+str[1]);
