@@ -9,27 +9,28 @@ import java.awt.event.WindowEvent;
 import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.Timer.*;
 import static javafx.scene.paint.Color.color;
 import javax.swing.*;
 
 /**
- * Terminal program 
- * @Yash Srivastava 
+ * Terminal program
+ * @Yash Srivastava
  */
 public class Terminal  {
-    
+
     private JLabel machinename;
     private JTextField command;
-    private JFrame frame; 
+    private JFrame frame;
     private JPanel p;
-    
+
     Terminal()
     {
-        
-        
+
+
         frame = new JFrame("Terminal");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
+
         frame.setSize(500,300);
         p = new JPanel();
 //frame.setLayout(new GridLayout());
@@ -45,14 +46,14 @@ public class Terminal  {
         frame.setVisible(true);
         command.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                        
+
                File file,file2;
-               String s = command.getText().toString();             //getting the command 
-               
+               String s = command.getText().toString();             //getting the command
+
                String[] str = s.split(" ");
-               
+
                if(str[0].equals("mkdir"))
-               {                
+               {
                    command.setText("");
                    file = new File("C:\\"+str[1]);
                    if (!file.exists()) {
@@ -61,11 +62,11 @@ public class Terminal  {
                        }
                        else {
                            System.out.println("Failed to create directory!");
-                       }   } 
+                       }   }
                    else { System.out.println("Hello");
                     }
                }
-               
+
                if(s.equals("touch"))
                {
                    command.setText("");
@@ -81,23 +82,23 @@ public class Terminal  {
                        Logger.getLogger(Terminal.class.getName()).log(Level.SEVERE, null, ex);
                    }
                }
-               
+
                if(s.equals("exit"))
                {
                    System.out.println("Hello its closing now");
-                   frame.setVisible(false); 
+                   frame.setVisible(false);
                    frame.dispose();
                }
-        
+
     }});
-    
+
     }
     public static void main(String[] args) {
-        
-            Terminal t = new Terminal();
-            
 
-        
+            Terminal t = new Terminal();
+
+
+
     }
-    
+
 }
